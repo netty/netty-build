@@ -50,9 +50,9 @@
   <inceptionYear>2008</inceptionYear>
 
   <scm>
-    <url>https://github.com/netty/netty</url>
-    <connection>scm:git:git://github.com/netty/netty.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/netty/netty.git</developerConnection>
+    <url>https://github.com/netty/netty-build</url>
+    <connection>scm:git:git://github.com/netty/netty-build.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/netty/netty-build.git</developerConnection>
   </scm>
 
   <developers>
