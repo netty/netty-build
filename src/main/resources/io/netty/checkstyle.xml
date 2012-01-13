@@ -10,7 +10,7 @@
   <module name="JavadocPackage"/>
   <module name="NewlineAtEndOfFile"/>
   <module name="RegexpSingleline">
-    <property name="format" value="@(author|version)"/>
+    <property name="format" value="(@(author|version)|\(non-Javadoc\))"/>
     <property name="ignoreCase" value="true"/>
   </module>
 
