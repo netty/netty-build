@@ -43,10 +43,12 @@
     <!--
     <module name="FinalLocalVariable"/>
     -->
+    <!-- Commented out due to http://jira.codehaus.org/browse/MCHECKSTYLE-111
     <module name="RedundantThrows">
       <property name="logLoadErrors" value="false"/>
       <property name="suppressLoadErrors" value="true"/>
     </module>
+    -->
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
     <module name="NoFinalizer"/>
