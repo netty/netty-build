@@ -10,7 +10,8 @@ import com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck;
 
 public class SuppressionFilter extends AutomaticBean implements Filter {
 
-    private FilterSet filters = new FilterSet();
+    private static final Pattern JAVA5PATTERN = Pattern.compile("[\\\\/]org[\\\\/]jboss[\\\\/]");
+    
     private Pattern pattern;
     private Pattern examplePattern = Pattern.compile("examples?");
     
@@ -24,6 +25,12 @@ public class SuppressionFilter extends AutomaticBean implements Filter {
 
     @Override
     public boolean accept(AuditEvent evt) {
+        if (JAVA5PATTERN.matcher(evt.getFileName()).find()) {
+            if (evt.getSourceName().endsWith("MissingOverrideCheck")) {
+                return false;
+            }
+        }
+        
         if (pattern.matcher(evt.getFileName()).find()) {
             return false;
         }
