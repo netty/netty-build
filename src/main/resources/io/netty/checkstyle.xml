@@ -8,7 +8,10 @@
   </module>
   <module name="FileTabCharacter"/>
   <module name="JavadocPackage"/>
-  <module name="NewlineAtEndOfFile"/>
+  <module name="NewlineAtEndOfFile">
+    <!-- Ignore as this is not possible in windows -->
+    <property name="severity" value="ignore" />
+  </module>
   <module name="RegexpSingleline">
     <property name="format" value="^(\s|\*)*Copyright\s+[0-9]+\s+The Netty Project\s*$"/>
     <property name="minimum" value="1"/>
