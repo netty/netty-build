@@ -10,7 +10,7 @@ import com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck;
 
 public class SuppressionFilter extends AutomaticBean implements Filter {
 
-    private static final Pattern JAVA5PATTERN = Pattern.compile("[\\\\/]org[\\\\/]jboss[\\\\/]");
+    private static final Pattern JAVA5PATTERN = Pattern.compile("/org/jboss/");
     
     private Pattern pattern;
     private Pattern examplePattern = Pattern.compile("examples?");
@@ -25,16 +25,17 @@ public class SuppressionFilter extends AutomaticBean implements Filter {
 
     @Override
     public boolean accept(AuditEvent evt) {
-        if (JAVA5PATTERN.matcher(evt.getFileName()).find()) {
+        String filename = evt.getFileName().replace('\\', '/');
+        if (JAVA5PATTERN.matcher(filename).find()) {
             if (evt.getSourceName().endsWith("MissingOverrideCheck")) {
                 return false;
             }
         }
         
-        if (pattern.matcher(evt.getFileName()).find()) {
+        if (pattern.matcher(filename).find()) {
             return false;
         }
-        if (examplePattern.matcher(evt.getFileName()).find()) {
+        if (examplePattern.matcher(filename).find()) {
             if (evt.getSourceName().endsWith(".JavadocPackageCheck")) {
                 return false;
             }
