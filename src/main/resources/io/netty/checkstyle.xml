@@ -26,19 +26,25 @@
   <module name="NewlineAtEndOfFile">
     <property name="lineSeparator" value="lf" />
   </module>
+  <!-- Copyright headers -->
   <module name="RegexpSingleline">
     <property name="format" value="^(\s|\*)*Copyright\s+[0-9]+\s+The Netty Project\s*$"/>
     <property name="minimum" value="1"/>
     <property name="maximum" value="1"/>
   </module>
+  <!-- Unmaintainable Javadoc tags -->
   <module name="RegexpSingleline">
     <property name="format" value="(@(author|version)|\(non-Javadoc\))"/>
     <property name="ignoreCase" value="true"/>
   </module>
   <!-- Force UNIX line separator -->
-  <module name="RegexpSingleline">
+  <module name="RegexpMultiline">
     <property name="format" value="\r"/>
   </module>
+  <!-- Trailing whitespace -->
+  <module name="RegexpSingleline">
+    <property name="format" value="\s+$"/>
+  </module> 
 
   <module name="TreeWalker">
     <module name="WhitespaceAfter"/>
