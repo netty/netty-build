@@ -45,6 +45,10 @@
   <module name="RegexpSingleline">
     <property name="format" value="\s+$"/>
   </module> 
+  <!-- No more than 119 characters per line. -->
+  <module name="RegexpSingleline">
+    <property name="format" value="^.{120,}$"/>
+  </module> 
 
   <module name="TreeWalker">
     <module name="WhitespaceAfter"/>
