@@ -1,0 +1,2 @@
+## This file gets rid of the velocity warning about missing VM_global_library.vm file by providing
+## a dummy one.
