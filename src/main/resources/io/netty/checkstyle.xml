@@ -69,7 +69,6 @@
       <property name="allowInSwitchCase" value="true"/>
     </module>
     <module name="FinalClass"/>
-    <module name="InterfaceIsType"/>
     <module name="HideUtilityClassConstructor"/>
     <module name="CovariantEquals"/>
     <module name="DoubleCheckedLocking"/>
