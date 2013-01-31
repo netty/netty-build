@@ -19,10 +19,7 @@
   "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 <module name="Checker">
   <module name="io.netty.build.checkstyle.SuppressionFilter">
-    <property name="pattern" value="(LocalTimeProtocol|LinkedTransferQueue|Version|jzlib/.*|com/sun/nio/sctp/.*)\.java" />
-    <!--
-    <property name="pattern" value="(test[^/]*/.*|LocalTimeProtocol|LinkedTransferQueue|Version|jzlib/.*|com/sun/nio/sctp/.*)\.java" />
-    -->
+    <property name="pattern" value="(WorldClockProtocol|LinkedTransferQueue|Version|jzlib/.*|com/sun/nio/sctp/.*)\.java" />
   </module>
   <module name="FileTabCharacter"/>
   <module name="JavadocPackage"/>
