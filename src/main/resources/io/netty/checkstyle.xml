@@ -23,9 +23,7 @@
   </module>
   <module name="FileTabCharacter"/>
   <module name="JavadocPackage"/>
-  <module name="NewlineAtEndOfFile">
-    <property name="lineSeparator" value="lf" />
-  </module>
+  <module name="NewlineAtEndOfFile" />
   <!-- Copyright headers -->
   <module name="RegexpSingleline">
     <property name="format" value="^(\s|\*)*Copyright\s+[0-9]+\s+The Netty Project\s*$"/>
@@ -45,10 +43,7 @@
     <property name="message" value="IDE-generated comment"/>
   </module>
   <!-- Force UNIX line separator -->
-  <module name="RegexpMultiline">
-    <property name="format" value="\r"/>
-    <property name="message" value="non-Unix line separator"/>
-  </module>
+  <module name="io.netty.build.checkstyle.NewlineCheck"/>
   <!-- Trailing whitespace -->
   <module name="RegexpSingleline">
     <property name="format" value="\s+$"/>
