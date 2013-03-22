@@ -89,7 +89,6 @@
     <module name="FinalClass"/>
     <module name="HideUtilityClassConstructor"/>
     <module name="CovariantEquals"/>
-    <module name="DoubleCheckedLocking"/>
     <module name="EmptyStatement"/>
     <module name="EqualsHashCode"/>
     <!--
