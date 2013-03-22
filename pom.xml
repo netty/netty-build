@@ -27,7 +27,7 @@
   <groupId>io.netty</groupId>
   <artifactId>netty-build</artifactId>
   <packaging>jar</packaging>
-  <version>18</version>
+  <version>19-SNAPSHOT</version>
 
   <name>Netty/Build</name>
 
