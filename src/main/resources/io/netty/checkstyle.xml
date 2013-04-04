@@ -24,6 +24,9 @@
   <module name="io.netty.build.checkstyle.SuppressionFilter">
     <property name="pattern" value="((LocalTime|WorldClock)Protocol|LinkedTransferQueue|Version|jzlib/.*|chmv8/.*|com/sun/nio/sctp/.*)\.java" />
   </module>
+  <module name="SuppressionFilter">
+    <property name="file" value="./suppressions.xml" />
+  </module>
   <module name="FileTabCharacter"/>
   <module name="JavadocPackage"/>
   <module name="NewlineAtEndOfFile" />
