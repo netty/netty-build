@@ -105,7 +105,6 @@
     -->
     <module name="SimplifyBooleanExpression"/>
     <module name="SimplifyBooleanReturn"/>
-    <module name="NoFinalizer"/>
     <module name="SuperFinalize"/>
     <module name="PackageDeclaration"/>
     <module name="ExplicitInitialization"/>
