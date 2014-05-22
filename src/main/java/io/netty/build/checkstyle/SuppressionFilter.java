@@ -15,11 +15,11 @@
  */
 package io.netty.build.checkstyle;
 
-import java.util.regex.Pattern;
-
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.AutomaticBean;
 import com.puppycrawl.tools.checkstyle.api.Filter;
+
+import java.util.regex.Pattern;
 
 public class SuppressionFilter extends AutomaticBean implements Filter {
 
@@ -50,6 +50,9 @@ public class SuppressionFilter extends AutomaticBean implements Filter {
         }
         if (examplePattern.matcher(filename).find()) {
             if (evt.getSourceName().endsWith(".JavadocPackageCheck")) {
+                return false;
+            }
+            if (evt.getSourceName().endsWith(".HideUtilityClassConstructorCheck")) {
                 return false;
             }
         }
