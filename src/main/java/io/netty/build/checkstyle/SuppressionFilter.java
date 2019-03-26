@@ -17,6 +17,7 @@ package io.netty.build.checkstyle;
 
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.AutomaticBean;
+import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.Filter;
 
 import java.util.regex.Pattern;
@@ -57,5 +58,10 @@ public class SuppressionFilter extends AutomaticBean implements Filter {
             }
         }
         return true;
+    }
+
+    @Override
+    protected void finishLocalSetup() {
+        // NOOP.
     }
 }

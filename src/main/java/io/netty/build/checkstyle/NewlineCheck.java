@@ -20,7 +20,6 @@ import com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck;
 import com.puppycrawl.tools.checkstyle.api.FileText;
 
 import java.io.File;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public class NewlineCheck extends AbstractFileSetCheck {
@@ -57,8 +56,8 @@ public class NewlineCheck extends AbstractFileSetCheck {
     }
 
     @Override
-    protected void processFiltered(File aFile, List<String> aLines) {
-        String text = FileText.fromLines(aFile, aLines).getFullText().toString();
+    protected void processFiltered(File file, FileText fileText) {
+        String text = fileText.getFullText().toString();
 
         switch (NEWLINE_TYPE) {
         case LF:
