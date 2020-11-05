@@ -24,7 +24,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>maven-plugin</packaging>
-    <artifactId>glibccheck-netty-build-maven-plugin</artifactId>
+    <artifactId>netty-build-glibccheck-maven-plugin</artifactId>
     <name>Netty/Build/GlibcCheck</name>
     <dependencies>
         <dependency>
