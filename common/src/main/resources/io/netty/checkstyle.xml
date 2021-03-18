@@ -24,6 +24,10 @@
   <module name="io.netty.build.checkstyle.SuppressionFilter">
     <property name="pattern" value="((LocalTime|WorldClock)Protocol|LinkedTransferQueue|Version|jzlib/.*|chmv8/.*|com/sun/nio/sctp/.*)\.java" />
   </module>
+  <!-- Ignore module-info.java because checkstyle cannot parse these yet. -->
+  <module name="BeforeExecutionExclusionFileFilter">
+    <property name="fileNamePattern" value="module\-info\.java$"/>
+  </module>
   <module name="FileTabCharacter"/>
   <module name="JavadocPackage"/>
   <module name="NewlineAtEndOfFile" />
