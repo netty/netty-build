@@ -20,11 +20,17 @@ import com.puppycrawl.tools.checkstyle.api.*;
 
 import java.util.regex.Pattern;
 
+/**
+ * This check verifies that static final buffers are unreleasable and read-only.
+ *
+ * It aims to prevent corruption bugs like khttps://github.com/netty/netty/issues/11792
+ * from happening in the future.
+ */
 public class StaticFinalBufferCheck extends AbstractCheck {
 
+    // Pattern is single line because variable definition is flattened and trimmed before the match.
     private static final Pattern pattern = Pattern.compile(
-            "(Unpooled\\s*\\.)?unreleasableBuffer\\(.*?\\)\\s*\\.asReadOnly\\(\\)",
-            Pattern.MULTILINE);
+            "(Unpooled\\s*\\.)?unreleasableBuffer\\(.*?\\)\\s*\\.asReadOnly\\(\\)");
 
     @Override
     public int[] getRequiredTokens() {
@@ -60,7 +66,7 @@ public class StaticFinalBufferCheck extends AbstractCheck {
         StringBuilder sb = new StringBuilder();
         for (int i = assignAST.getLineNo(); i <= semiAST.getLineNo(); i++) {
             // getLineNo returns 1-based line number, getLine expects 0-based.
-            sb.append(fc.getLine(i - 1));
+            sb.append(fc.getLine(i - 1).trim());
         }
         if (!pattern.matcher(sb.toString()).find()) {
             log(ast.getLineNo(), "static final buffer assignment should match pattern " + pattern);
