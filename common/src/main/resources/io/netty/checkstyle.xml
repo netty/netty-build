@@ -75,8 +75,10 @@
     <property name="max" value="120"/>
     <property name="fileExtensions" value="java"/>
   </module>
+  <module name="SuppressWarningsFilter" />
 
   <module name="TreeWalker">
+    <module name="SuppressWarningsHolder" />
     <!-- Make sure final static buffers are unreleasable and read-only. -->
     <module name="io.netty.build.checkstyle.StaticFinalBufferCheck"/>
     <module name="WhitespaceAfter"/>
