@@ -27,12 +27,12 @@ import java.util.regex.Pattern;
 /**
  * This check verifies that static final buffers are unreleasable and read-only.
  *
- * It aims to prevent corruption bugs like khttps://github.com/netty/netty/issues/11792
+ * It aims to prevent corruption bugs like https://github.com/netty/netty/issues/11792
  * from happening in the future.
  */
 public class StaticFinalBufferCheck extends AbstractCheck {
 
-    // Pattern is single line because variable definition is flattened and trimmed before the match.
+    // Pattern is not multiline because variable definition is flattened and trimmed before the match.
     private static final Pattern pattern = Pattern.compile(
             "(Unpooled\\s*\\.)?unreleasableBuffer\\(.*?\\)\\s*\\.asReadOnly\\(\\)");
 
