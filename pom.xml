@@ -31,7 +31,7 @@
   <groupId>io.netty</groupId>
   <artifactId>netty-build</artifactId>
   <packaging>pom</packaging>
-  <version>31-SNAPSHOT</version>
+  <version>31</version>
 
   <name>Netty/Build</name>
 
@@ -57,7 +57,7 @@
     <url>https://github.com/netty/netty-build</url>
     <connection>scm:git:git://github.com/netty/netty-build.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/netty/netty-build.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>netty-build-31</tag>
   </scm>
 
   <developers>
